@@ -1,8 +1,10 @@
 import express from 'express';
+import getMetrics from './metrics';
+import getTime from './time';
 
-const apiRouter = express.Router();
+const router = express.Router();
 
-apiRouter.use('/time', getTime);
-apiRouter.use('/metrics', getMetrics);
+router.get('/time', getTime);
+router.get('/metrics', getMetrics);
 
-export default apiRouter;
+export default router;
