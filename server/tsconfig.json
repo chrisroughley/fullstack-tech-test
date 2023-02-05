@@ -5,6 +5,7 @@
         "module": "NodeNext",
         "noImplicitAny": true,
         "resolveJsonModule": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "moduleResolution": "Node"
     }
 }
