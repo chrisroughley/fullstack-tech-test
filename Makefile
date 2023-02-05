@@ -4,7 +4,7 @@ help:
 
 default: help
 
-npm-installs: ## Install all npm folders
+npm-installs: ## Install npm packages in all  directories
 	@{ \
 		npm install ;\
 		pushd ./client ;\
