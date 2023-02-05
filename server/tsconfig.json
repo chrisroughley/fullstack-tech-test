@@ -3,6 +3,8 @@
         "target": "ESNext",
         "lib": ["ES2015", "DOM"],
         "module": "NodeNext",
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true
     }
 }
