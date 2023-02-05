@@ -20,5 +20,5 @@
         "no-new": "off",
         "lines-between-class-members": "off"
     },
-    "ignorePatterns": ["*.test.js"]
+    "ignorePatterns": ["*.test.ts"]
 }
