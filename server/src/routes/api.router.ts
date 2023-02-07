@@ -1,6 +1,6 @@
 import express from 'express';
-import getTime from '../controllers/time';
-import getEndpoints from '../controllers/endpoints';
+import getTime from '../controllers/time.controller';
+import getEndpoints from '../controllers/endpoints.controller';
 
 const router = express.Router();
 
