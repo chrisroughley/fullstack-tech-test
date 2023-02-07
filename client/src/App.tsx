@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.css';
 import Time from './components/Time';
 import Metrics from './components/Metrics';
 
