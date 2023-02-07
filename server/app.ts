@@ -1,11 +1,13 @@
 import promMid from 'express-prometheus-middleware';
 import express from 'express';
+import cors from 'cors';
 import handleBadUrls from './src/utils/errors';
 import router from './src/routes/api.router';
 import tokenAuthorization from './src/middleware/middleware';
 
 const app = express();
 
+app.use(cors());
 app.use(tokenAuthorization);
 
 app.use(

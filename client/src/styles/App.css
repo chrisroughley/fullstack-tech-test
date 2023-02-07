@@ -1,0 +1,8 @@
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2rem;
+    max-height: calc(100vh - 5rem)
+}
