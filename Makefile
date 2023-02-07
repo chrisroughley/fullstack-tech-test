@@ -15,3 +15,19 @@ npm-installs: ## Install npm packages in all  directories
 		popd ;\
 	}
 
+npm-installs-and-run-all: ## Install npm packages in all  directories and run api and react app concurrently 
+	@{ \
+		npm install ;\
+		pushd ./client ;\
+		npm install ;\
+		popd ;\
+		pushd ./server ;\
+		npm install ;\
+		npm start ;\
+	}
+
+run-all: ## Run api and react app concurrently 
+	@{ \
+		pushd ./server ;\
+		npm start ;\
+	}
