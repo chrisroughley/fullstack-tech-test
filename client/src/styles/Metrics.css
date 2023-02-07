@@ -1,0 +1,7 @@
+.metrics {
+    max-height: calc(100% - 2rem);
+    overflow: scroll;
+    text-align: left;
+    font-size: 13px;
+    line-height: 20px;
+}

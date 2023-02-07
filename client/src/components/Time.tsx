@@ -1,26 +1,45 @@
 import { useState, useEffect } from 'react';
 import { fetchTime } from '../api/api';
+import '../styles/Time.css';
+import formatTime from '../utils/formatTime';
 
 const Time = () => {
-    const [time, setTime] = useState(1);
+    const [time, setTime] = useState(Date.now());
+    const [timeDifference, setTimeDifference] = useState(0);
 
     useEffect(() => {
-        (async () => {
-            console.log(await fetchTime());
-        })();
-        const intervalId = setInterval(async () => {
+        const getTime = async () => {
             const fetchedTime = await fetchTime();
-            console.log(fetchedTime);
-            // setTime(fetchedTime);
-        }, 1000);
+            setTime(fetchedTime.epoch);
+        };
+        getTime();
+        
+        const serverTimeIntervalId = setInterval(async () => {
+            //initiate loading spinner
+            await getTime();
+            //clear loading spinner
+        }, 30000);
 
-        return clearInterval(intervalId);
+        return () => {
+            clearInterval(serverTimeIntervalId);
+        };
     }, []);
 
+    useEffect(() => {
+        const timeDifferenceIntervalId = setInterval(() => {
+            setTimeDifference(Date.now() - time);
+        }, 1000);
+
+        return () => {
+            clearInterval(timeDifferenceIntervalId);
+        };
+    }, [time]);
+
     return (
-        <div>
+        <div className="time-container">
             <h1>Time</h1>
             <span>Server time as of last fetch request: {time}</span>
+            <span>Time difference to server: {formatTime(timeDifference)}</span>
         </div>
     );
 };

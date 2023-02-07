@@ -5,8 +5,8 @@ import Metrics from './components/Metrics';
 function App() {
     return (
         <div className="App">
-            <Metrics />
             <Time />
+            <Metrics />
         </div>
     );
 }
